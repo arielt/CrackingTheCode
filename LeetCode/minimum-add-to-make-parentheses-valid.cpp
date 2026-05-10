@@ -3,8 +3,8 @@
 class Solution {
 public:
     int minAddToMakeValid(string s) {
-        int open = 0; // 
-        int missing = 0; // openers to add
+        int open = 0; // number of open parentheses
+        int missing = 0; // number of open parentheses to add
         
         for(char c : s) {
             if (c == '(') {
