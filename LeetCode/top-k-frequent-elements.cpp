@@ -1,7 +1,8 @@
 // https://leetcode.com/problems/top-k-frequent-elements/
 
-#include <unordered_map>
+#include <queue>
 #include <ranges>
+#include <unordered_map>
 #include <vector>
 
 using namespace std;
@@ -17,7 +18,8 @@ public:
             freq[n]++;
         }
 
-        // min heap
+        // using min heap: O(N) + O(MLog(K)) / O(N) + O(K)
+        // M - number of unique elements
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
         for (auto& [num, count] : freq) {
@@ -33,9 +35,6 @@ public:
         }
 
         return rv;
-        // using priority queue: O(N) + O(MLog(K)) / O(N) + O(M) + O(K)
-        // M - number of unique elements
-
         // // distribute to buckets: O(N) / O(N)
         // vector<vector<int>> buckets(nums.size() + 1);   // buckets
         // for (auto& [num, count] : freq) {
