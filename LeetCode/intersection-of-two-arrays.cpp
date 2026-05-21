@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/intersection-of-two-arrays
 
-#include <set>
+#include <unordered_set>
 #include <vector>
 
 using namespace std;
@@ -8,7 +8,7 @@ using namespace std;
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
-        set<int> s;
+        unordered_set<int> s;
         vector<int> rv;
 
         vector<int>& n1 = (nums1.size() < nums2.size()) ? nums1 : nums2;
