@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/first-unique-character-in-a-string/
 
+#include <string>
+
 using namespace std;
 
 class Solution {
