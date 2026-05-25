@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/subarray-sum-equals-k/
 
 #include <unordered_map>
+#include <vector>
 
 using namespace std;
 
