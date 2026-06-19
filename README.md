@@ -1,3 +1,3 @@
 # Cracking the code
 
-Solutions for various coding problems.
+Solutions to various coding problems.
