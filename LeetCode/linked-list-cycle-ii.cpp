@@ -11,6 +11,10 @@
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
+        // use fast and slow pointers
+        // if they meet, start another pointer from the beginning
+        // return the node they meet
+
         ListNode* slow = head;
         ListNode* fast = head;
 
@@ -18,15 +22,16 @@ public:
             slow = slow->next;
             fast = fast->next->next;
 
-            if (slow == fast) {
-                while (head != fast) {
+            if (fast == slow) {
+                while (head != slow) {
                     head = head->next;
-                    fast = fast->next;
+                    slow = slow->next;
                 }
-                return head;
+                return slow;
             }
         }
 
+        // no cycle
         return nullptr;
     }
 };
