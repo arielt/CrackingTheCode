@@ -8,12 +8,13 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
-        // use fast and slow pointers
-        // if they meet, start another pointer from the beginning
-        // return the node they meet
+        // Have to use slow pointer to preserve head.
+        // Once the collision point is found, advance from the head and collision point
+        // together till 2 pointers meet.
 
         ListNode* slow = head;
         ListNode* fast = head;
@@ -27,7 +28,7 @@ public:
                     head = head->next;
                     slow = slow->next;
                 }
-                return slow;
+                return head;
             }
         }
 
